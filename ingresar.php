@@ -11,12 +11,14 @@ $clave = $_POST['clave'];
 
 // Verificamos la lista de usuarios registrados
 if (isset($_SESSION['lista'])) {
+    // Obtenemos la lista de usuarios registrados
     $lista = new Lista();
     $lista->setUsuarios($_SESSION['lista']);
 
     // Obtenemos el usuario que ingresó
     $usuario = $lista->obtenerUsuario($correo, $clave);
 
+    // Si existe el usuario, guardamos sus datos en la sesión
     if ($usuario != null) {
         $_SESSION['nombre'] = $usuario->getNombre();
         $_SESSION['correo'] = $usuario->getCorreo();
@@ -27,7 +29,7 @@ if (isset($_SESSION['lista'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
