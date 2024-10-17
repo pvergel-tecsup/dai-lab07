@@ -1,3 +1,11 @@
+<?php
+// Iniciamos la sesión
+session_start();
+
+if (isset($_POST['usuario'])) {
+    header('Location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,8 +20,8 @@
     <div class="container">
         <form method="post" action="registrar.php">
             <div class="card mt-5">
-                <div class="card-header">
-                    <div class="card-title text-center fs-1">Registro</div>
+                <div class="card-header bg-warning">
+                    <div class="card-title text-center fs-1 text-white">Registro</div>
                 </div>
                 <div class="card-body">
                     <div class="mb-3 row">

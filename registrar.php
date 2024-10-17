@@ -18,7 +18,7 @@ $lista = new Lista();
 $lista->setUsuarios($_SESSION['lista']);
 
 // Agregamos el nuevo usuario
-$lista->agregarUsuario($user);
+$lista->agregar($user);
 
 // Guardamos la lista de usuarios
 $_SESSION['lista'] = $lista->getUsuarios();

@@ -16,15 +16,13 @@ if (isset($_SESSION['lista'])) {
     $lista->setUsuarios($_SESSION['lista']);
 
     // Obtenemos el usuario que ingresó
-    $usuario = $lista->obtenerUsuario($correo, $clave);
+    $usuario = $lista->ingresar($correo, $clave);
 
     // Si existe el usuario, guardamos sus datos en la sesión
     if ($usuario != null) {
-        $_SESSION['nombre'] = $usuario->getNombre();
-        $_SESSION['correo'] = $usuario->getCorreo();
-        $_SESSION['clave'] = $usuario->getClave();
+        $_SESSION['usuario'] = $usuario;
 
-        header('Location: principal.php');
+        header('Location: index.php');
     }
 }
 ?>

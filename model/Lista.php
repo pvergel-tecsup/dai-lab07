@@ -17,7 +17,7 @@ class Lista
         $this->_usuarios = $usuarios;
     }
 
-    public function nuevaLista()
+    public function nueva()
     {
         $user1 = new Usuario('Juan Pérez', 'juan@gmail.com', '1234');
         $user2 = new Usuario('María Sosa', 'maria@gmail.com', '9876');
@@ -27,12 +27,12 @@ class Lista
         return $this->_usuarios;
     }
 
-    public function agregarUsuario($usuario)
+    public function agregar($usuario)
     {
         $this->_usuarios[] = $usuario;
     }
 
-    public function obtenerUsuario($correo, $clave)
+    public function ingresar($correo, $clave)
     {
         $cantidad = count($this->_usuarios);
         for ($i = 0; $i < $cantidad; $i++) {
